@@ -1,4 +1,6 @@
-## Building an ASP.NET 6 application
+## Container Core Concepts - Windows containers
+
+### Building an ASP.NET 6 application
 
 
 In the previous task, you built container images using some of the more mature technologies and products

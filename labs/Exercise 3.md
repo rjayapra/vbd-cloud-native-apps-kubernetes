@@ -1,4 +1,6 @@
-## Building and Running Node.JS Application as Container
+## Container Core Concepts
+
+### Building and Running Node.JS Application as Container
 
 In this task you will create a new image based on the Node.js base image. You will start with a Dockerfile with
 instructions to copy the files needed to host a custom Node.js application, install necessary software inside

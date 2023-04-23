@@ -1,4 +1,6 @@
-## Tagging
+## Container Core Concepts
+
+### Exercise 5: Tagging
 
 In this exercise you will learn the role of tagging in container and how to tag new and existing container
 images using Docker commands.

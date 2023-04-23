@@ -1,4 +1,6 @@
-## Build and run an IIS Server Image
+## Container Core Concepts - Windows containers
+
+### Build and run an IIS Server Image
 
 In the exercise you will learn how to install IIS Web Server (Web Server Role) on a Windows Server Core base
 core image. IIS Server is a popular Web Server released by Microsoft. Considering the strong footprint of IIS

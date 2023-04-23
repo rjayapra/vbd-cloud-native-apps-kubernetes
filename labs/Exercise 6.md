@@ -1,4 +1,6 @@
-## Working with Nano Server and Windows Server Core containers
+## Container Core Concepts - Windows containers
+
+### Working with Nano Server and Windows Server Core containers
 
 In this exercise, you will learn about the Windows Nano Server and Server Core images. Please read below for
 an overview of each image. Then you will complete the steps to build and run these containers.
