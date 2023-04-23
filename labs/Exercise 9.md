@@ -1,6 +1,6 @@
 ## Advanced Container Topics
 
-### Working with Data Volumes
+### Exercise 9: Working with Data Volumes
 ---
 
 In this exercise, you will learn how to mount a host directory as a data volume. The host directory will be
