@@ -1,3 +1,5 @@
+## Container Core Concepts
+
 ## Exercise 1: Running Your First Container
 
 In this exercise, you will launch a fully functional WordPress blog engine using a Linux-based Docker
