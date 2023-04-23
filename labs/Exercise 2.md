@@ -25,6 +25,7 @@ your container ID will most likely start with a different characters.
 
 6. If you want see the Container ID of the stopped container, and you forgot the Container ID, you can run
 **docker ps -a** to see all containers, even those that are stopped/exited.
+
 ![image](https://user-images.githubusercontent.com/85903942/233814887-8489ee88-d649-4540-a58a-52b75e874349.png)
 
 7. You can also issue command to start the container which was stopped. To start a container run 
@@ -33,6 +34,7 @@ your container ID will most likely start with a different characters.
 ![image](https://user-images.githubusercontent.com/85903942/233814899-71dc1d3c-2d48-48f3-904e-ffa5c948a31d.png)
   
 > **Tip:** This uses the container identifier you use in previous section to stop the container.
+
 ![image](https://user-images.githubusercontent.com/85903942/233814909-216fa83d-f633-464a-aef1-41e9b7d6b206.png)
 
 8. To make sure that container has started successfully run docker ps command.
