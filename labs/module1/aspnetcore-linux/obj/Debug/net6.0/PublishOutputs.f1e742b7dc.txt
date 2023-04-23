@@ -1,0 +1,7 @@
+C:\labs\module4\aspnetcore-linux\published\myaspcoreapp.exe
+C:\labs\module4\aspnetcore-linux\published\appsettings.Development.json
+C:\labs\module4\aspnetcore-linux\published\appsettings.json
+C:\labs\module4\aspnetcore-linux\published\myaspcoreapp.dll
+C:\labs\module4\aspnetcore-linux\published\myaspcoreapp.deps.json
+C:\labs\module4\aspnetcore-linux\published\myaspcoreapp.runtimeconfig.json
+C:\labs\module4\aspnetcore-linux\published\myaspcoreapp.pdb

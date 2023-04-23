@@ -2,7 +2,8 @@
 
 FROM nginx:stable-alpine
 
-LABEL author="sampleauthor@contoso.com" 
+LABEL author="sampleauthor@contoso.com"
+LABEL version="1.0"
 
 COPY index.html /usr/share/nginx/html/index.html
 

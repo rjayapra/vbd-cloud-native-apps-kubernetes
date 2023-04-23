@@ -1,6 +1,4 @@
-FROM mcr.microsoft.com/windows/servercore:1809
-
-LABEL owner="cloudarchitectureteam@contoso.com"
+FROM mcr.microsoft.com/windows/servercore:20H2
 
 RUN powershell -Command Add-WindowsFeature Web-Server
 

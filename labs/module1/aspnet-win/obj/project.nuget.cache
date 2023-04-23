@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "yCkPxRn8JQbyn2Tv3B7yvO3J7SzpZ2iwydBR63/fl5/iTNVeEaM2pHpOMk9eWZDSfpmGaHeKg/0OvEz9yAmSfw==",
+  "success": true,
+  "projectFilePath": "C:\\labs\\aspnetcore-win\\demo-win\\demo-win.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\niivetic\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512"
+  ],
+  "logs": []
+}

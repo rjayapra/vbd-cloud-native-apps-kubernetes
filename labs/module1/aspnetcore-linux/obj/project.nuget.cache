@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "rosK1yUqUt2HeAFvLjGik8O44IohKt7IJIYCCgjZYiteLpB2v6KWrEJcdo9FhWugLAP9pBKOus0A0M6gsicViw==",
+  "success": true,
+  "projectFilePath": "C:\\labs\\module4\\aspnetcore-linux\\myaspcoreapp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512"
+  ],
+  "logs": []
+}
