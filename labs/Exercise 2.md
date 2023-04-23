@@ -93,7 +93,8 @@ the force parameter.
 17. Now, run the command docker images
 
 > **Note:** Notice that "msftcontainers/wordpress" image is no longer available.
-![Uploading image.png…]()
+
+![image](https://user-images.githubusercontent.com/85903942/233815074-7c01ba7b-bbfe-4cfc-81f0-8888aae00677.png)
 
 Congratulations!
 You have successfully completed this exercise 2.  
