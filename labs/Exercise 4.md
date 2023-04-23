@@ -1,4 +1,6 @@
-### Interaction with a Running Container
+## Container Core Concepts
+
+### Exercise 4: Interaction with a Running Container
 ---
 
 In the previous exercise, you were able to build and run containers based on Dockerfiles. However, there may
