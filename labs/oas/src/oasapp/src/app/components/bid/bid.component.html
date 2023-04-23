@@ -1,0 +1,47 @@
+<div class="container">
+  <h3>
+    <img width="30" alt="Active Auctions" src="assets/images/bid.png" />
+    &nbsp;Active Auctions
+  </h3>
+  <hr />
+  <p>
+    <alert></alert>
+  </p>
+
+  <table class="table table-hover" *ngIf="!loading">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Starting Price</th>
+        <th scope="col">Last Bid Price</th>
+        <th scope="col">Remaining Time</th>
+        <th scope="col">Created On</th>
+        <th scope="col">Created By</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let auction of auctions" (click)="rowSelected(auction)">
+        <th scope="row">{{ auction.idAuction }}</th>
+        <td>{{ auction.Name }}</td>
+        <td>{{ auction.Description }}</td>
+        <td>{{ auction.StartingPrice | currency }}</td>
+        <td>{{ auction.BidPrice | currency }}</td>
+        <td>{{ auction.ActiveInHours }} hrs.</td>
+        <td>{{ auction.AuctionDate | date: "dd/MM/yyyy h:mm a" }}</td>
+        <td>{{ auction.userName }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-center">
+    <div
+      class="spinner-border text-secondary"
+      style="width: 3rem; height: 3rem"
+      role="status"
+      *ngIf="loading"
+    >
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</div>

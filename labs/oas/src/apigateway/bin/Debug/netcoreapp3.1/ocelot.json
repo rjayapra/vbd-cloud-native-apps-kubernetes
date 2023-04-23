@@ -1,0 +1,43 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/auction/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "3000"
+        }
+      ],
+      "UpstreamPathTemplate": "/auction/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/bid/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ 
+        {
+          "Host": "localhost",
+          "Port": "9090"
+        }
+      ],
+      "UpstreamPathTemplate": "/bid/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/payments/{everything}",
+      "DownstreamScheme": "http", 
+      "DownstreamHostAndPorts": [ 
+        {
+          "Host": "localhost",
+          "Port": "5000" 
+        }
+      ],
+      "UpstreamPathTemplate": "/payments/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5010"
+  }
+}

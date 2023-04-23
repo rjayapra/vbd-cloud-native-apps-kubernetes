@@ -1,0 +1,15 @@
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\obj\Debug\netcoreapp2.2\PaymentService.csprojAssemblyReference.cache
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\obj\Debug\netcoreapp2.2\PaymentService.RazorAssemblyInfo.cache
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\obj\Debug\netcoreapp2.2\PaymentService.RazorAssemblyInfo.cs
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\obj\Debug\netcoreapp2.2\PaymentService.AssemblyInfoInputs.cache
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\obj\Debug\netcoreapp2.2\PaymentService.AssemblyInfo.cs
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\bin\Debug\netcoreapp2.2\PaymentService.deps.json
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\bin\Debug\netcoreapp2.2\PaymentService.runtimeconfig.json
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\bin\Debug\netcoreapp2.2\PaymentService.runtimeconfig.dev.json
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\bin\Debug\netcoreapp2.2\PaymentService.dll
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\bin\Debug\netcoreapp2.2\PaymentService.pdb
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\obj\Debug\netcoreapp2.2\PaymentService.RazorTargetAssemblyInfo.cache
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\obj\Debug\netcoreapp2.2\PaymentService.dll
+C:\Engagements\OSS\Development\onlineauctionweb\paymentservice\OASPayment\PaymentService\obj\Debug\netcoreapp2.2\PaymentService.pdb

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0d437a4c-f650-41b3-b1e3-7d14c819c6c3": {
+      "ProjectGuid": "0d437a4c-f650-41b3-b1e3-7d14c819c6c3",
+      "DisplayName": "notificationlistener.dapr",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

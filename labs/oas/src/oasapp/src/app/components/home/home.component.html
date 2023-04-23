@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="text-center">
+    <p class="lead">
+      Online Auction system is a place for seller and buyers to trade different
+      kind of items. Click on create auction item to create new auction or
+      search for currently auctions taking place by choosing the active auction
+      link.
+    </p>
+    <div class="row">
+      <div class="col">
+        <a [routerLink]="['/auction']">
+          <img
+            width="150"
+            alt="Create Auction"
+            src="assets/images/createauction.png"
+          />
+        </a>
+        <div class="text-center lead">Create Auction</div>
+      </div>
+      <div class="col">
+        <a [routerLink]="['/bid']">
+          <img width="150" alt="Active Bids" src="assets/images/bid.png" />
+        </a>
+        <div class="text-center lead">Active Auctions</div>
+      </div>
+      <div class="col">
+        <a [routerLink]="['/mytransactions']">
+          <img
+            width="150"
+            alt="My Auctions"
+            src="assets/images/transaction.png"
+          />
+        </a>
+        <div class="text-center lead">My Auctions</div>
+      </div>
+      <div class="col">
+        <a [routerLink]="['/winningbids']">
+          <img
+            width="150"
+            alt="Winning Bids"
+            src="assets/images/winningbid.png"
+          />
+        </a>
+        <div class="text-center lead">Winning Bids</div>
+      </div>
+    </div>
+  </div>
+</div>

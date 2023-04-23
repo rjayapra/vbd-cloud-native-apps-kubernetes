@@ -1,0 +1,20 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: pubsub
+spec:
+  type: pubsub.azure.eventhubs
+  version: v1
+  metadata:
+    - name: connectionString
+      value: Endpoint=sb://eventhubovtfx-oas.servicebus.windows.net/;SharedAccessKeyName=PreviewDataPolicy;SharedAccessKey=63Aq9F8UYVpq9OmBTq7CZfn/4Vu32jCcTpvwzVKWaxA=;EntityPath=notificationtopic
+    - name: storageAccountName
+      value: daprstorave
+    - name: storageAccountKey
+      value: KYz7evXZIhLzpeeCNxjORbg5IQUTQarPBdopfbpD/UWGj7xv7dLZLBJuh4eDW9M8ahFMERjyqHzglYy+R9tTFg==
+    - name: storageContainerName
+      value:  daprstoragecontainer
+scopes:
+  - publisher-service
+  - subscriber-service
+  - notificationlistener-service
