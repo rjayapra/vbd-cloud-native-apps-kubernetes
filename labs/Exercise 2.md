@@ -1,4 +1,6 @@
-## Docker commands 
+## Container Core Concepts
+
+### Docker commands 
 
 1. First list all the containers currently running by executing **docker ps** command. You should see list of
 all running containers.
