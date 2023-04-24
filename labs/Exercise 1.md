@@ -28,8 +28,8 @@ packaged inside of the container.
 
 ![image](https://user-images.githubusercontent.com/85903942/233814496-b13e3a3b-5942-48c0-9ccf-270c893006ef.png)
 
-4. That's it! You can now run the entire WordPress in a container. To do that run the command docker
-> run -d -p 80:80 msftcontainers/wordpress
+4. That's it! You can now run the entire WordPress in a container. To do that run the command
+```docker run -d -p 80:80 msftcontainers/wordpress```
 > **Note**: Pay close attention to the dash "-" symbol in front of "-p" and "-d" in the command.
 
 5. Run the following _docker ps_ to see the running containers.
