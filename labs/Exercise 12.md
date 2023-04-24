@@ -178,3 +178,11 @@ az role assignment create --role "AcrPull" --assignee $AKS_ID --scope $ACR_ID
 az role assignment create --role "AcrPull" --assignee $AKS_POOL_ID --scope $ACR_ID
 ```
 
+20. Set up Azure Key Vault
+```
+$AKS_NAME="k8sws-aks"
+$KV_NAME="kvk8sws"
+
+Write-Host "Creating keyvault"
+az keyvault create --name $KV_NAME --resource-group $AKS_RESOURCE_GROUP --enable-rbac-authorization false --sku Standard
+```
