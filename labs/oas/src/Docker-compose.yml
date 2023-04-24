@@ -1,0 +1,172 @@
+version: '3'
+
+services:
+
+  oasapp:
+    image: oasapp:1.0
+    container_name: oasapp
+    hostname: oasapp
+    build:
+      context: ./oasapp
+      dockerfile: Dockerfile
+    depends_on:
+      - apigateway
+    ports:
+      - 4200:4200
+    environment:
+      - identityAPI=http://apigateway:5010/identity
+      - auctionAPI=http://apigateway:5010/auction
+      - bidAPI=http://apigateway:5010/bid
+      - paymentAPI=http://apigateway:5010/payment
+      - instrumentationKey=replaceinstrumentationKeyoas
+
+  apigateway:
+    image: apigateway:1.0
+    container_name: apigateway
+    hostname: apigateway
+    build:
+      context: ./apigateway
+      dockerfile: Dockerfile
+    depends_on:
+      - identityservice
+      - auctionservice
+      - bidservice
+      - paymentservice
+      - notificationservice
+      - smtp4dev
+    ports:
+      - 5010:5010
+
+
+  identityservice:
+    image: identityservice:1.0
+    container_name: identityservice
+    hostname: identityservice
+    build:
+      context: ./identityservice
+      dockerfile: Dockerfile
+    ports: 
+      - 5032:5032
+
+
+  auctionservice:
+    image: auctionservice:1.0
+    container_name: auctionservice
+    hostname: auctionservice
+    build:
+      context: ./auctionservice/auctionservice
+      dockerfile: Dockerfile
+    ports: 
+      - 3000:3000
+    environment:
+      - instrumentationKey=replaceinstrumentationKeyauction
+      - mysqlhost=replacemysqlhost
+      - mysqlusername=replacemysqlusername
+      - mysqlpassword=replacemysqlpassword
+      - mysqldbname=replacemysqldbname
+
+  bidservice:
+    image: bidservice:1.0
+    container_name: bidservice
+    hostname: bidservice
+    build:
+      context: ./bidservice/bidservice
+      dockerfile: Dockerfile
+    ports:
+      - 9090:9090
+    environment:
+      - cosmosdbconnectionstring=replacecosmosdbconnectionstring
+      - bootstrap.servers=replacebootstrapservers
+      - kakfkaendpoint=replacekakfkaendpoint
+      - kafkasharedaccesskeyname=RootManageSharedAccessKey
+      - kafkasharedaccesskey=replacekafkasharedaccesskey
+
+  paymentservice:
+    image: paymentservice:1.0
+    container_name: paymentservice 
+    hostname: paymentservice 
+    build:
+      context: ./paymentservice/paymentservice 
+      dockerfile: Dockerfile
+    ports: 
+      - 5000:80
+    environment:
+      - InstrumentationKey=replaceinstrumentationkeypayment
+      - ConnectionStrings__PaymentServiceContext=replaceConnectionStringsPaymentServiceContext
+      - BootstrapServers=replaceBootstrapServers
+      - SaslPassword=replaceSaslPassword
+      - GroupId=onlineauctiongroup
+      - PaymentTopicName=paymenttopic
+
+  bidlistener:
+    image: bidlistener:1.0
+    container_name: bidlistener
+    hostname: bidlistener
+    build:
+      context: ./bidlistener
+      dockerfile: Dockerfile
+    depends_on:
+      - apigateway
+    environment:
+      - InstrumentationKey=replaceinstrumentationkeylistener
+      - BootstrapServers=replaceBootstrapServers
+      - SaslPassword=replaceSaslPassword
+      - GroupId=onlineauctiongroup
+      - AuctionServiceURL=http://apigateway:5010/auction
+      - BidTopicName=bidtopic
+      - Mode=Production
+
+  auctionpaymentlistener:
+    image: auctionpaymentlistener:1.0
+    container_name: auctionpaymentlistener
+    hostname: auctionpaymentlistener
+    build:
+      context: ./auctionpaymentlistener
+      dockerfile: Dockerfile
+    depends_on:
+      - apigateway
+    environment:
+      - InstrumentationKey=replaceinstrumentationkeylistener
+      - BootstrapServers=replaceBootstrapServers
+      - SaslPassword=replaceSaslPassword
+      - GroupId=onlineauctiongroup
+      - AuctionServiceURL=http://apigateway:5010/auction
+      - PaymentTopicName=paymenttopic
+      - NotificationTopicName=notificationtopic
+      - Mode=Production
+
+  notificationlistener:
+    image: notificationlistener:1.0
+    container_name: notificationlistener
+    hostname: notificationlistener
+    build:
+      context: ./notificationlistener
+      dockerfile: Dockerfile
+    depends_on:
+      - apigateway
+    environment:
+      - InstrumentationKey=replaceinstrumentationkeylistener
+      - BootstrapServers=replaceBootstrapServers
+      - SaslPassword=replaceSaslPassword
+      - GroupId=onlineauctiongroup
+      - NotificationServiceURL=http://apigateway:5010/notification
+      - NotificationTopicName=notificationtopic
+      - Mode=Production
+
+  notificationservice:
+    image: notificationservice:1.0
+    container_name: notificationservice
+    hostname: notificationservice
+    build:
+      context: ./notificationservice
+      dockerfile: Dockerfile
+    ports: 
+      - 3005:3005
+
+  smtp4dev:
+    image: rnwood/smtp4dev
+    container_name: smtp4dev
+    hostname: smtp4dev
+    ports:
+      - 3001:80
+      - 25:25
