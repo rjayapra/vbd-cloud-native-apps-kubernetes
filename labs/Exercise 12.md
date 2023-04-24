@@ -89,4 +89,92 @@ az aks create --resource-group $AKS_RESOURCE_GROUP `
 ```
 
 10. Once the cluster is ready (after at least 5 minutes), connect your local machine to it.
+```
+az aks get-credentials --name $AKS_NAME --resource-group $AKS_RESOURCE_GROUP
+```
+
+11. List nodes
+```
+kubectl get nodes
+```
+
+12. Get the list of system nodes only. At this point, the list should return 1 node.
+```
+kubectl get nodes -l="kubernetes.azure.com/mode=system"
+```
+
+13. Add Linux user node pool
+
+```
+az aks nodepool add --resource-group $AKS_RESOURCE_GROUP `
+--cluster-name $AKS_NAME `
+--os-type Linux `
+--name linux1 `
+--node-count 1 `
+--enable-cluster-autoscaler `
+--min-count 1 `
+--max-count 3 `
+--mode User `
+--node-vm-size $VM_SKU
+```
+
+14. List the node pools in the cluster. Again there should be 2 now
+
+```
+az aks nodepool list --cluster-name $AKS_NAME --resource-group $AKS_RESOURCE_GROUP -o table
+```
+
+15. Create Windows user node pool
+
+```
+az aks nodepool add --resource-group $AKS_RESOURCE_GROUP `
+--cluster-name $AKS_NAME `
+--os-type Windows `
+--name win1 `
+--node-count 1 `
+--mode User `
+--node-vm-size $VM_SKU
+```
+
+16. Get the list of Linux nodes. There should be 2 nodes
+
+```
+kubectl get nodes -l="kubernetes.io/os=linux"
+```
+
+17. List the node pools in the cluster. Again there should be 3.
+```
+az aks nodepool list --cluster-name $AKS_NAME --resource-group $AKS_RESOURCE_GROUP -o table
+```
+
+18.  Configure the cluster-wide auto scaling profile so all the node pool auto scalers are more responsive.
+```
+az aks update --resource-group $AKS_RESOURCE_GROUP `
+--name $AKS_NAME `
+--cluster-autoscaler-profile `
+scale-down-delay-after-add=1m `
+scale-down-unready-time=1m `
+scale-down-unneeded-time=1m `
+skip-nodes-with-system-pods=true
+```
+
+19. Setup ACR
+
+```
+$ACR_NAME="acrk8sws"
+
+Write-Host "Creating ACR"
+$ACR_ID=$(az acr create --sku Premium --name $ACR_NAME --resource-group $AKS_RESOURCE_GROUP --query id -o tsv)
+$ACR_ID
+
+Write-Host "Get SP Ids from managed identity of AKS"
+
+$AKS_ID=$(az ad sp list --display-name "$AKS_NAME" --query [0].appId -o tsv)
+$AKS_POOL_ID=$(az ad sp list --display-name "$AKS_NAME-agentpool" --query [0].appId -o tsv)
+
+Write-Host "Assign the AKS cluster ACR Pull permissions to your ACR."
+
+az role assignment create --role "AcrPull" --assignee $AKS_ID --scope $ACR_ID
+az role assignment create --role "AcrPull" --assignee $AKS_POOL_ID --scope $ACR_ID
+```
 
