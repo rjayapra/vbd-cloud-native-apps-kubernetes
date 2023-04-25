@@ -39,3 +39,11 @@
 
 > ### Exercise 11: Docker compose
 :point_right: <a href="https://github.com/rjayapra/vbd-cloud-native-apps-kubernetes/blob/main/labs/Exercise%2011.md">Click here</a>
+
+## Kubernetes Core Concepts
+
+> ### Exercise 12 : Create an AKS cluster using CLI
+:point_right: <a href="https://github.com/rjayapra/vbd-cloud-native-apps-kubernetes/blob/main/labs/Exercise%2012.md">Click here</a>
+
+> ### Exercise 13 : Working with kubernetes resources
+:point_right: <a href="https://github.com/rjayapra/vbd-cloud-native-apps-kubernetes/blob/main/labs/Exercise%2013.md">Click here</a>
